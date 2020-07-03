@@ -1,0 +1,9 @@
+﻿@page "/"
+@inherits IndexViewModel
+
+<BECanvas Width="1024" Height="768" @ref="_canvasReference"  />
+<input type="text" @onkeypress="OnKeypress" />
+
+<div id="assets" style="display: none;">
+    <img src="/assets/ash.png"  @ref="ashRef"/>
+</div>
