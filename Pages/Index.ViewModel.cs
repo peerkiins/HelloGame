@@ -21,7 +21,6 @@ namespace HelloGame
         int spriteY = 0;
         int y = 352;
         int x = 480;
-        int motion;
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
@@ -53,41 +52,38 @@ namespace HelloGame
                 case "w":
                 case "W":
                     spriteY = 192;
-                    y--;
-                    currentFrame++;
-                    if (y < 0)
+                    if (y != 0)
                     {
-                        y = mapBorderMaxY;
+
+                        currentFrame++;
+                        y--;
                     }
                     break;
                 case "a":
                 case "A":
                     spriteY = 64;
-                    x--;
-                    currentFrame++;
-                    if (x < 0)
+                    if (x != 0)
                     {
-                        x = mapBorderMaxX;
+                        x--;
+                        currentFrame++;
                     }
                     break;
                 case "s":
                 case "S":
                     spriteY = 0;
-                    y++;
-                    currentFrame++;
-                    if (y > mapBorderMaxY)
+                    if (y != mapBorderMaxY)
                     {
-                        y = 0;
+                        y++;
+                        currentFrame++;
                     }
                     break;
                 case "d":
                 case "D":
                     spriteY = 128;
-                    x++;
-                    currentFrame++;
-                    if (x > mapBorderMaxX)
+                    if (x != mapBorderMaxX)
                     {
-                        x = 0;
+                        x++;
+                        currentFrame++;
                     }
                     break;
             }
